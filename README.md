@@ -30,11 +30,6 @@ LightUP Energy needs to host its "GridFlow" monitoring application and "VoltBill
 **Unauthorized Lateral Movement & Compliance Violations.**  
 By using RBAC and Policies, you prevent a junior admin from accidentally spinning up expensive resources in unauthorized overseas regions or deleting critical infrastructure.
 
-### Screenshot Proof
-
-- A screenshot of the *Azure Policy Compliance* dashboard showing "Compliant" status.
-- The *Access Control (IAM)* tab of your resource group showing the specific role assignment.
-
 ---
 
 ## Lab 2: Configure and Manage Virtual Networking (25–30%)
@@ -72,11 +67,6 @@ By using RBAC and Policies, you prevent a junior admin from accidentally spinnin
 
 **Network Intrusion & Traffic Congestion.**  
 NSGs act as a firewall, blocking all traffic except what is strictly necessary (Least Privilege). Peering ensures low-latency, private communication without using the public internet.
-
-### Screenshot Proof
-
-- A screenshot of the *NSG Inbound Security Rules*.
-- The *Network Watcher Topology* map showing the connected VNets.
 
 ---
 
@@ -133,11 +123,6 @@ Implementing firewall rules on the storage account ensures only the Grid-Prod VN
 **Brute Force Attacks & System Downtime.**  
 Azure Bastion eliminates the risk of RDP/SSH port exposure (3389/22) to the public internet. VMSS prevents the website from crashing when thousands of customers log in simultaneously.
 
-### Screenshot Proof
-
-- A screenshot of the *VMSS Scaling* charts during a test load.
-- A successful *Bastion* session window in the browser.
-
 ---
 
 ## Lab 5: Monitor and Back up Azure Resources (10–15%)
@@ -158,4 +143,5 @@ Azure Bastion eliminates the risk of RDP/SSH port exposure (3389/22) to the publ
 ### Risk Prevented
 
 **Ransomware & Resource Exhaustion.**  
+
 Azure Backup provides "Soft Delete" protection, preventing a malicious actor from permanently deleting backups. Monitoring allows you to catch performance issues before the power grid monitoring fails.
