@@ -25,7 +25,12 @@ Scenario: This lab simulation is designed for **LightUP Energy**, a regional pow
 Policy: Deny public IP creation in Production
 - Policy Assignment
 ![Management Group Structure](screenshots/Picture27.png)
----
+
+- Deny error message
+![Management Group Structure](screenshots/Picture28.png)
+
+- Compliance dashboard
+![Management Group Structure](screenshots/Picture29.png)
 
 ## Lab 1: Manage Azure Identities and Governance
 
@@ -149,6 +154,7 @@ Azure Bastion eliminates the risk of RDP/SSH port exposure (3389/22) to the publ
 **Ransomware & Resource Exhaustion.**  
 
 Azure Backup provides "Soft Delete" protection, preventing a malicious actor from permanently deleting backups. Monitoring allows you to catch performance issues before the power grid monitoring fails.
+
 
 
 
