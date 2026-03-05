@@ -4,6 +4,17 @@
 
 Scenario: This lab simulation is designed for **LightUP Energy**, a regional power provider migrating its grid management and billing systems to Azure. LightUP Energy needs to host its "GridFlow" monitoring application and "VoltBill" customer portal in Azure. As the Lead Administrator, you must ensure the environment is secure, scalable, and resilient.
 
+## Focus Areas
+
+- Zero Trust network segmentation
+- Least Privilege RBAC
+- Azure Policy governance enforcement
+- Bastion-based secure access
+- Private backend infrastructure
+- Architecture Diagram
+- Azure Monitor threat detection (KQL)
+- Backup & ransomware resilience
+
 ### Security Controls Implemented
 
 - Management Group: LightUP-Root
@@ -136,6 +147,7 @@ Azure Bastion eliminates the risk of RDP/SSH port exposure (3389/22) to the publ
 **Ransomware & Resource Exhaustion.**  
 
 Azure Backup provides "Soft Delete" protection, preventing a malicious actor from permanently deleting backups. Monitoring allows you to catch performance issues before the power grid monitoring fails.
+
 
 
 
