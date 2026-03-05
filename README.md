@@ -1,4 +1,4 @@
-## LightUP Energy – Azure Cloud Security Architecture Lab
+## LightUP Energy – Azure Cloud Security Lab
 
 ---
 
@@ -146,6 +146,7 @@ Azure Bastion eliminates the risk of RDP/SSH port exposure (3389/22) to the publ
 **Ransomware & Resource Exhaustion.**  
 
 Azure Backup provides "Soft Delete" protection, preventing a malicious actor from permanently deleting backups. Monitoring allows you to catch performance issues before the power grid monitoring fails.
+
 
 
 
