@@ -95,12 +95,6 @@ NSGs act as a firewall, blocking all traffic except what is strictly necessary (
 **Data Leakage & Cost Overruns.**  
 Implementing firewall rules on the storage account ensures only the Grid-Prod VNet can access sensor data. Archive tiers prevent massive bills from "cold" log data.
 
-### Screenshot Proof
-
-- A screenshot of the *Lifecycle Management* rule list.
-- The *Networking* tab of the storage account shows restricted "Selected Networks" access.
-
----
 
 ## Lab 4: Deploy and Manage Azure Compute Resources
 
@@ -145,4 +139,5 @@ Azure Bastion eliminates the risk of RDP/SSH port exposure (3389/22) to the publ
 **Ransomware & Resource Exhaustion.**  
 
 Azure Backup provides "Soft Delete" protection, preventing a malicious actor from permanently deleting backups. Monitoring allows you to catch performance issues before the power grid monitoring fails.
+
 
