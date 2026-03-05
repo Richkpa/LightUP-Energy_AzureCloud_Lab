@@ -1,5 +1,5 @@
 This lab simulation is designed for **LightUP Energy**, a regional power provider migrating its grid management and billing systems to Azure.  
-Each section aligns with the official to give you a "real-life" administrator experience.
+Each section aligns with a "real-life" administrator experience.
 
 ---
 
@@ -17,7 +17,7 @@ LightUP Energy needs to host its "GridFlow" monitoring application and "VoltBill
 
 ---
 
-## Lab 1: Manage Azure Identities and Governance (15–20%)
+## Lab 1: Manage Azure Identities and Governance
 
 ### Task
 
@@ -28,11 +28,11 @@ LightUP Energy needs to host its "GridFlow" monitoring application and "VoltBill
 ### Risk Prevented
 
 **Unauthorized Lateral Movement & Compliance Violations.**  
-By using RBAC and Policies, you prevent a junior admin from accidentally spinning up expensive resources in unauthorized overseas regions or deleting critical infrastructure.
+By using RBAC and Policies, I prevent a junior admin from accidentally spinning up expensive resources in unauthorized overseas regions or deleting critical infrastructure.
 
 ---
 
-## Lab 2: Configure and Manage Virtual Networking (25–30%)
+## Lab 2: Configure and Manage Virtual Networking
 
 ### Task
 
@@ -70,7 +70,7 @@ NSGs act as a firewall, blocking all traffic except what is strictly necessary (
 
 ---
 
-## Lab 3: Implement and Manage Storage (15–20%)
+## Lab 3: Implement and Manage Storage
 
 ### Task
 
@@ -98,11 +98,11 @@ Implementing firewall rules on the storage account ensures only the Grid-Prod VN
 ### Screenshot Proof
 
 - A screenshot of the *Lifecycle Management* rule list.
-- The *Networking* tab of the storage account showing restricted "Selected Networks" access.
+- The *Networking* tab of the storage account shows restricted "Selected Networks" access.
 
 ---
 
-## Lab 4: Deploy and Manage Azure Compute Resources (20–25%)
+## Lab 4: Deploy and Manage Azure Compute Resources
 
 ### Task
 
@@ -125,7 +125,7 @@ Azure Bastion eliminates the risk of RDP/SSH port exposure (3389/22) to the publ
 
 ---
 
-## Lab 5: Monitor and Back up Azure Resources (10–15%)
+## Lab 5: Monitor and Back up Azure Resources
 
 ### Task
 
@@ -145,3 +145,4 @@ Azure Bastion eliminates the risk of RDP/SSH port exposure (3389/22) to the publ
 **Ransomware & Resource Exhaustion.**  
 
 Azure Backup provides "Soft Delete" protection, preventing a malicious actor from permanently deleting backups. Monitoring allows you to catch performance issues before the power grid monitoring fails.
+
