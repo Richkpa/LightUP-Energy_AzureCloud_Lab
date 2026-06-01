@@ -15,7 +15,51 @@ Scenario: This lab simulation is designed for **LightUP Energy**, a regional pow
 - Azure Monitor threat detection (KQL)
   
 ### Architecture Diagram
-![Management Group Structure](screenshots/architecture.jpg)
+
+```mermaid
+graph TB
+    %% Styling Definitions
+    classDef mgStyle fill:#1e293b,stroke:#3b82f6,stroke-width:1px,color:#fff;
+    classDef subStyle fill:#14532d,stroke:#22c55e,stroke-width:1px,color:#fff;
+    classDef compStyle fill:#312e81,stroke:#6366f1,stroke-width:1px,color:#fff;
+    classDef fwStyle fill:#7c2d12,stroke:#ef4444,stroke-width:1px,color:#fff;
+    classDef basStyle fill:#064e3b,stroke:#10b981,stroke-width:1px,color:#fff;
+    classDef webStyle fill:#3b0764,stroke:#a855f7,stroke-width:1px,color:#fff;
+    classDef dbStyle fill:#451a03,stroke:#f97316,stroke-width:1px,color:#fff;
+    classDef storageStyle fill:#78350f,stroke:#eab308,stroke-width:1px,color:#fff;
+
+    %% Top Level Organization
+    MG[Management Group: LightUP-Root]:::mgStyle
+    Sub[Subscription: Production]:::subStyle
+
+    %% Central Shared Services Cluster
+    subgraph SharedServices [Shared Services / Core Network]
+        FW[Azure Firewall + DDoS Protection]:::fwStyle
+        Bas[Azure Bastion]:::basStyle
+        DNS[Azure DNS + Private DNS]:::compStyle
+        Log[Log Analytics Azure Monitor Defender for Cloud Sentinel]:::compStyle
+    end
+
+    %% Left and Right Core Tiers
+    WebTier[VMSS Web Tier Behind Load Balancer]:::webStyle
+    DBTier[Windows Server 2022 DB VM Private Endpoint Enabled]:::dbStyle
+
+    %% Bottom Storage Lifecycle
+    Storage[Storage Account Telemetry Logs Lifecycle -> Archive Firewall: Selected Networks Private Endpoint]:::storageStyle
+
+    %% Layout Relationships
+    MG --> Sub
+    Sub --> SharedServices
+    WebTier --- SharedServices
+    SharedServices --- DBTier
+    SharedServices --> Storage
+
+    %% Subgraph Styling
+    style SharedServices fill:#451a03,stroke:#d97706,stroke-width:1px,color:#fff;
+
+```
+
+'![Management Group Structure](screenshots/architecture.jpg)'
 
 ## Infrastructure as Code (Bicep)
 
