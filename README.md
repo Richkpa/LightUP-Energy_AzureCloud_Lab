@@ -17,6 +17,27 @@ Scenario: This lab simulation is designed for **LightUP Energy**, a regional pow
 ### Architecture Diagram
 ![Management Group Structure](screenshots/architecture.jpg)
 
+## Infrastructure as Code (Bicep)
+
+The entire lab environment can be torn down and redeployed from scratch using the Bicep templates in the `bicep/` folder. This was added to solve the cost problem of leaving resources running — deallocate or delete everything, then redeploy in ~15 minutes when resuming the lab.
+
+### File Structure
+
+```
+bicep/
+├── main.bicep                    ← Entry point (subscription scope)
+├── lightup.bicepparam            ← Parameter values
+├── deploy.ps1                    ← PowerShell deployment script
+└── modules/
+    ├── rbac.bicep                ← Lab 1: VM Contributor role assignment
+    ├── networking.bicep          ← Lab 2: LightUP-VNet, NSGs, LB, DNS
+    ├── billing-networking.bicep  ← Lab 2: Billing-VNet + peering
+    ├── vnet-peering.bicep        ← Lab 2: Grid to Billing peering leg
+    ├── storage.bicep             ← Lab 3: Storage account, lifecycle, file share
+    ├── compute.bicep             ← Lab 4: Bastion, VMSS, DB VM, autoscale
+    └── monitoring.bicep          ← Lab 5: Log Analytics, Recovery Vault, alerts
+```
+
 ### Security Controls Implemented
 
 - Management Group: LightUP-Root
@@ -152,12 +173,10 @@ Azure Bastion eliminates the risk of RDP/SSH port exposure (3389/22) to the publ
 3. Create a **Log Analytics Workspace** and run a KQL query to find failed login attempts.  
    ![Log Analytics Query](screenshots/Picture26.png)
 
-### Risk Prevented
+### Risk Prevented 
 
 **Ransomware & Resource Exhaustion.**  
-
 Azure Backup provides "Soft Delete" protection, preventing a malicious actor from permanently deleting backups. Monitoring allows you to catch performance issues before the power grid monitoring fails.
-
 
 
 
