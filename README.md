@@ -61,7 +61,36 @@ graph TB
 
 ## Infrastructure as Code (Bicep)
 
-The entire lab environment can be torn down and redeployed from scratch using the Bicep templates in the `bicep/` folder. This was added to solve the cost problem of leaving resources running — deallocate or delete everything, then redeploy in ~15 minutes when resuming the lab.
+The entire lab environment can be torn down and redeployed from scratch using the Bicep templates in the `bicep/` folder. This was added to solve the cost problem of leaving resources running. Deallocate or delete everything, then redeploy in ~15 minutes when resuming the lab. 
+
+> [!IMPORTANT]
+> ### Alternative Manual Deployment (CLI)
+> If you prefer not to use PowerShell (`deploy.ps1`), you can deploy the infrastructure directly using the **Azure CLI**. 
+>
+> Run the following commands in your terminal (ensure you replace the placeholder values with your actual configuration data):
+>
+> ```bash
+> # 1. Authenticate to Azure
+> az login
+> 
+> # 2. Set your active target subscription
+> az account set --subscription "YOUR-SUBSCRIPTION-ID"
+> 
+> # 3. Execute the subscription-level deployment
+> az deployment sub create \
+>   --name "lightup-deploy" \
+>   --location "eastus2" \
+>   --template-file "main.bicep" \
+>   --parameters \
+>     location="eastus" \
+>     adminUsername="Your_UserName" \
+>     adminPassword="Your_Secure_Password" \
+>     alertEmailAddress="Your_Email" \
+>     storageAccountName="lightupstoragelogs" \
+>     vmssVmSize="Standard_DC1s_v3" \
+>     dbVmSize="Standard_DC1s_v3" \
+>     vmssInstanceCount=1
+> ```
 
 ### File Structure
 
