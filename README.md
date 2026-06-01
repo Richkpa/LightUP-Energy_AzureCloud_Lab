@@ -59,8 +59,6 @@ graph TB
 
 ```
 
-'![Management Group Structure](screenshots/architecture.jpg)'
-
 ## Infrastructure as Code (Bicep)
 
 The entire lab environment can be torn down and redeployed from scratch using the Bicep templates in the `bicep/` folder. This was added to solve the cost problem of leaving resources running — deallocate or delete everything, then redeploy in ~15 minutes when resuming the lab.
