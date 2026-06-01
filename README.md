@@ -61,7 +61,7 @@ graph TB
 
 ## Infrastructure as Code (Bicep)
 
-The entire lab environment can be torn down and redeployed from scratch using the Bicep templates in the `bicep/` folder. This was added to solve the cost problem of leaving resources running. Deallocate or delete everything, then redeploy in ~15 minutes when resuming the lab. 
+The entire lab environment can be torn down and redeployed from scratch using the Bicep templates in the `bicep/` folder. This was added to solve the cost problem of leaving resources running. You can deallocate or delete everything, then redeploy in ~15 minutes when resuming the lab. 
 
 > [!IMPORTANT]
 > ### Alternative Manual Deployment (CLI)
